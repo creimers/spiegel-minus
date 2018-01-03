@@ -5,8 +5,13 @@
   "description": "This extension removes the spiegel online paywall.",
   "version": "0.1.0",
 
-  "browser_action": {
-    "default_icon": "icon.png"
-  },
-  "permissions": ["http://*.spiegel.de/", "https://*.spiegel.de/"]
+  "permissions": ["http://*.spiegel.de/", "https://*.spiegel.de/"],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.spiegel.de/*", "https://*.spiegel.de/*"
+      ],
+      "js": ["jquery-3.2.1.min.js", "index.js"]
+    }
+  ]
 }
